@@ -8,6 +8,8 @@ import { FooterComponent } from './site/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { TweetComponent } from './tweet/tweet.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './site/user/user.component';
+import { TweetAddComponent } from './tweet-add/tweet-add.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     HomeComponent,
     TweetComponent,
-    ProfileComponent
+    ProfileComponent,
+    UserComponent,
+    TweetAddComponent
   ],
   imports: [
     BrowserModule,

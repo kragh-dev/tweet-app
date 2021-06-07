@@ -1,0 +1,54 @@
+.tweet-add-area {
+	margin: 15px;
+}
+
+.text-area {
+    border-radius: 0;
+	border-bottom: 1;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-color: white;
+	background-color: rgb(17, 17, 17);
+	margin: 0;
+    padding: 15px;
+    color: white;
+	resize: none;
+	font-size: small;
+}
+
+.text-area:focus {
+    border-radius: 0;
+	border-bottom: 1;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-color: white;
+	background-color: rgb(17, 17, 17);
+	margin: 0;
+    padding: 15px;
+    color: white;
+	resize: none;
+	font-size: small;
+}
+
+.text-area::placeholder {
+	font-size: small;
+}
+
+.btn-post {
+	background-color: #0077ff;
+	color: white;
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+	float: right;
+}
+
+.post-icon {
+	font-size: larger;
+}

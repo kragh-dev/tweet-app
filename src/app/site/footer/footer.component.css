@@ -1,0 +1,31 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.nav-div {
+    max-width: 640px !important;
+    margin: 0 auto;
+    background-color: #282828;
+    /* background-color: #161b22; */
+    padding: 5px 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-icon:hover {
+    color: white;
+}

@@ -1,0 +1,22 @@
+.user-area {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    min-height: 100vh;
+    z-index: 1;
+}
+
+.user-name {
+    margin-top: 10px;
+    font-size: large;
+}
+
+.user-id {
+    color: gray;
+    font-size: small;
+}
+
+.user-hr {
+    margin: 5px 0;
+}

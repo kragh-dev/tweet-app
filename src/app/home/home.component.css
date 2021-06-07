@@ -1,0 +1,14 @@
+.home-area {
+    /* padding: 15px; */
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    min-height: 100vh;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.title {
+    margin-left: 15px;
+    font-size: 15px;
+}
