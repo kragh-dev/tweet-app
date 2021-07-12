@@ -1,11 +1,11 @@
 <div class="home-area">
-    <app-tweet-add></app-tweet-add>
+    <app-tweet-add (tweetPosted)="refreshAfterAction($event)"></app-tweet-add>
     <hr>
-    <div>
+    <div *ngIf="tweets.length != 0">
         <b class="title">Tweets</b>
-        <app-tweet></app-tweet>
-        <app-tweet></app-tweet>
-        <app-tweet></app-tweet>
-        <app-tweet></app-tweet>
+        <app-tweet *ngFor="let tweet of tweets" [tweet]="tweet" (tweetLiked)="refreshAfterAction($event)" (replyPosted)="refreshAfterAction($event)"></app-tweet>
+    </div>
+    <div *ngIf="tweets.length == 0">
+        <span class="noTweets">There are no tweets to display</span>
     </div>
 </div>

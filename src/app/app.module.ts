@@ -10,6 +10,16 @@ import { TweetComponent } from './tweet/tweet.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './site/user/user.component';
 import { TweetAddComponent } from './tweet-add/tweet-add.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AsyncPipe, DatePipe } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { UserCardComponent } from './user-card/user-card.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { TweetViewComponent } from './tweet-view/tweet-view.component';
+import { ReplyComponent } from './reply/reply.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +30,23 @@ import { TweetAddComponent } from './tweet-add/tweet-add.component';
     TweetComponent,
     ProfileComponent,
     UserComponent,
-    TweetAddComponent
+    TweetAddComponent,
+    LoginComponent,
+    SignUpComponent,
+    UserCardComponent,
+    UserListComponent,
+    ResetPasswordComponent,
+    TweetViewComponent,
+    ReplyComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AsyncPipe, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

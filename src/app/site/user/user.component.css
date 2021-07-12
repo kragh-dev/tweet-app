@@ -10,13 +10,29 @@
 .user-name {
     margin-top: 10px;
     font-size: large;
+    cursor: pointer;
 }
 
 .user-id {
     color: gray;
     font-size: small;
+    cursor: pointer;
 }
 
 .user-hr {
     margin: 5px 0;
+}
+
+.user-function-button {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin-top: 10px;
+}
+
+.user-function-button-icon {
+    font-size: 15px;
+    margin-right: 5px;
 }

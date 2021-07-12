@@ -1,19 +1,35 @@
-<div class="tweet-area" #tweet>
-    <img src="../../assets/images/userdp.png" class="user-avatar">
+<div class="tweet-area" #theTweet (click)="onTweetClick()">
+    <img src="../../assets/avatars/{{tweet.author.avatarId}}.png" class="user-avatar">
     <div class="tweet">
         <div class="tweet-user">
-            <b class="user-name">Kaarthikeyan Raghavan</b>
-            <span class="user-handle">@kragh-dev</span>
+            <b class="user-name">{{tweet.author.firstName}} {{tweet.author.lastName}}</b>
+            <span class="user-handle">@{{tweet.author.loginId}}</span>
             <span class="tweet-time-seperator">&#8226;</span>
-            <span class="tweet-time">3h</span>
+            <span class="tweet-time">{{getTime(tweet.createdAt)}}</span>
         </div>
-        <div class="tweet-text">
-            Hello, I am Kaarthikeyan. This is my first tweet. Please like this tweet and share for maximum support.
-        </div>
+        <div class="tweet-text break-newline" [innerHTML]="genTags(tweet.text)"></div>
         <div class="tweet-actions">
-            <div class="tweet-action"><span class="material-icons tweet-action-icon">favorite_border</span>13.1K</div>
-            <div class="tweet-action"><span class="material-icons tweet-action-icon">chat_bubble_outline</span>236</div>
+            <div class="tweet-action">
+                <span *ngIf="tweet.liked == 'y'" (click)="likeTweet()" class="material-icons tweet-action-icon liked">favorite</span>
+                <span *ngIf="tweet.liked == 'n'"(click)="likeTweet()" class="material-icons tweet-action-icon">favorite_border</span>
+                {{tweet.likeCount}}
+            </div>
+            <div class="tweet-action"><span (click)="onReply()" class="material-icons tweet-action-icon">chat_bubble_outline</span>{{tweet.replyCount}}</div>
             <span></span>
         </div>
     </div>
+</div>
+<div *ngIf="isReply" class="tweet-reply-area">
+    <b class="reply-title">Reply</b>
+    <form [formGroup]="replyForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="tweet-reply form-group">
+            <img src="../../assets/avatars/{{getUser().avatarId}}.png" class="reply-user-avatar">
+            <textarea rows="3" type="text" (input)="onReplyType()" class="form-control text-area" formControlName="reply" id="reply" placeholder="Your thoughts?"></textarea>
+        </div>
+        <div class="text text-danger w30" *ngIf="replyForm.get('reply')?.dirty && replyForm.get('reply')?.hasError('maxlength')"><small class="small-help-text">Reply cannot exceed 144 characters</small></div>
+        <div class="text text-danger w30" *ngIf="!replyForm.get('reply')?.hasError('maxlength') && errorMessage"><small class="small-help-text">{{errorMessage}}</small></div>
+        <div class="form-group w30">
+            <button type="submit" class="btn btn-post"><span class="material-icons post-icon">send</span></button>
+        </div>
+    </form>
 </div>

@@ -1,8 +1,10 @@
 <div class="user-area">
-    <img src="../../../assets/images/userdp.png" width="20%">
-    <b class="user-name">Kaarthikeyan Raghavan</b>
-    <span class="user-id">@kragh-dev</span>
+    <img src="../../../assets/avatars/{{getUser().avatarId}}.png" width="20%">
+    <b (click)="onProfileClick()" class="user-name">{{getUser().firstName}} {{getUser().lastName}}</b>
+    <span (click)="onProfileClick()" class="user-id">@{{getUser().loginId}}</span>
     <hr class="user-hr">
-    <span>23 tweets</span>
+    <span class="tweet-count">{{getUser().tweetCount}} tweets</span>
     <hr class="user-hr">
+    <a (click)="changePassword()" class="user-function-button"><span class="material-icons user-function-button-icon">password</span> Change Password</a>
+    <a (click)="logoutUser()" class="user-function-button"><span class="material-icons user-function-button-icon">logout</span> Logout</a>
 </div>

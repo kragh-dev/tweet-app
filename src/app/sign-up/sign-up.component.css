@@ -1,0 +1,99 @@
+.sign-up-area {
+    padding: 15px;
+    padding-bottom: 60px;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.user-add-form {
+    padding-top: 15px;
+}
+
+.input-field {
+    border-radius: 0;
+	border-bottom: 1;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-color: white;
+	background-color: rgb(17, 17, 17);
+	margin: 0;
+    padding: 15px;
+    color: white;
+	resize: none;
+	font-size: small;
+}
+
+.input-field:focus {
+    border-radius: 0;
+	border-bottom: 1;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-color: #0077ff;
+	background-color: rgb(17, 17, 17);
+	margin: 0;
+    padding: 15px;
+    color: white;
+	resize: none;
+	font-size: small;
+	outline: none;
+}
+
+.input-field::placeholder {
+	font-size: small;
+}
+
+.card-avatar {
+    border-radius: 0;
+	background-color: rgb(17, 17, 17);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.card-avatar-selected {
+    border-radius: 0;
+	background-color: rgb(17, 17, 17);
+    padding: 10px;
+    border-bottom: 1;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+    border-color: white;
+    border-width: 5px;
+    cursor: pointer;
+}
+
+.btn-register {
+    cursor: pointer;
+	background-color: #0077ff;
+	color: white;
+	height: 35px;
+	border-radius: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+	float: right;
+}
+
+.btn-register-disabled {
+    cursor: no-drop;
+	background-color: #838383;
+	color: white;
+	height: 35px;
+	border-radius: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+	float: right;
+}
+
+.login-signup-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

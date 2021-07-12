@@ -1,0 +1,4 @@
+<div class="user-list-area">
+    <b class="title">Users</b>
+    <app-user-card *ngFor="let user of getUsers() | async" [user]="user"></app-user-card>
+</div>

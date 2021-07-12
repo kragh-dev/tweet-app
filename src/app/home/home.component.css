@@ -6,9 +6,16 @@
     min-height: 100vh;
     border-right: 1px solid gray;
     border-left: 1px solid gray;
+    padding-bottom: 45px;
 }
 
 .title {
     margin-left: 15px;
     font-size: 15px;
+}
+
+.noTweets {
+    margin: 0px 15px 0px 15px;
+    font-size: 15px;
+    text-align: center;
 }

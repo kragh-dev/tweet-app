@@ -1,0 +1,103 @@
+<div class="sign-up-area">
+    <div class="title"><b>Sign Up</b></div>
+    <form [formGroup]="userCreationForm" (ngSubmit)="onSubmit()" class="user-reg-form" novalidate>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="firstName">First Name</label>
+                    <input type="text" class="form-control input-field" formControlName="firstName" id="firstName" placeholder="Enter First Name">
+                    <div class="text text-danger" *ngIf="userCreationForm.get('firstName')?.touched && userCreationForm.get('firstName')?.hasError('required')"><small class="small-help-text">First Name is required</small></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="lastName">Last Name</label>
+                    <input type="text" class="form-control input-field" formControlName="lastName" id="lastName" placeholder="Enter Last Name">
+                    <div class="text text-danger" *ngIf="userCreationForm.get('lastName')?.touched && userCreationForm.get('lastName')?.hasError('required')"><small class="small-help-text">Last Name is required</small></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="email">Email</label>
+                    <input type="text" class="form-control input-field" (input)="onEmailChange(userCreationForm.get('email')?.value)" formControlName="email" id="email" placeholder="Enter Email Address" [ngClass]="{ 'is-invalid': isEmailExist , 'is-valid': userCreationForm.get('email')?.dirty && !userCreationForm.get('email')?.hasError('required') && !userCreationForm.get('email')?.hasError('email') && !isEmailExist }">
+                    <div class="text text-danger" *ngIf="userCreationForm.get('email')?.touched && userCreationForm.get('email')?.hasError('required')"><small class="small-help-text">Email is required</small></div>
+                    <div class="text text-danger" *ngIf="userCreationForm.get('email')?.touched && userCreationForm.get('email')?.hasError('email')"><small class="small-help-text">Enter a valid Email</small></div>
+                    <div class="text text-success" *ngIf="userCreationForm.get('email')?.dirty && !userCreationForm.get('email')?.hasError('required') && !userCreationForm.get('email')?.hasError('email') && !isEmailExist"><small class="small-help-text">You are good to go</small></div>
+                    <div class="text text-danger" *ngIf="userCreationForm.get('email')?.dirty && !userCreationForm.get('email')?.hasError('required') && !userCreationForm.get('email')?.hasError('email') && isEmailExist"><small class="small-help-text">Email already exist</small></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="loginId">Login Id</label>
+                    <input type="text" class="form-control input-field" (input)="onLoginIdChange(userCreationForm.get('loginId')?.value)" formControlName="loginId" id="loginId" placeholder="Enter Login Id" [ngClass]="{ 'is-invalid': isLoginIdExist , 'is-valid': userCreationForm.get('loginId')?.dirty && !userCreationForm.get('loginId')?.hasError('required') && !isLoginIdExist }">
+                    <div class="text text-danger" *ngIf="userCreationForm.get('loginId')?.touched && userCreationForm.get('loginId')?.hasError('required')"><small class="small-help-text">Login Id is required</small></div>
+                    <div class="text text-success" *ngIf="userCreationForm.get('loginId')?.dirty && !userCreationForm.get('loginId')?.hasError('required') && !isLoginIdExist"><small class="small-help-text">Login Id available</small></div>
+                    <div class="text text-danger" *ngIf="userCreationForm.get('loginId')?.dirty && !userCreationForm.get('loginId')?.hasError('required') && isLoginIdExist"><small class="small-help-text">Login Id already exist</small></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="contactNumber">Contact Number</label>
+                    <input type="text" class="form-control input-field" formControlName="contactNumber" id="contactNumber" placeholder="Enter Contact Number">
+                    <div class="text text-danger" *ngIf="userCreationForm.get('contactNumber')?.touched && userCreationForm.get('contactNumber')?.hasError('required')"><small class="small-help-text">Contact Number is required</small></div>
+                    <div class="text text-danger" *ngIf="userCreationForm.get('contactNumber')?.dirty && userCreationForm.get('contactNumber')?.hasError('maxlength')"><small class="small-help-text">Contact Number cannot exceed 10 characters</small></div>
+                    <div class="text text-danger" *ngIf="userCreationForm.get('contactNumber')?.dirty && userCreationForm.get('contactNumber')?.hasError('pattern')"><small class="small-help-text">Contact Number should not contain any alphabets & special characters</small></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="password">Password</label>
+                    <input type="password" class="form-control input-field" (input)="onPassword($event,password.value)" formControlName="password" id="password" placeholder="Enter Password">
+                    <div class="text text-danger" *ngIf="userCreationForm.get('password')?.touched && userCreationForm.get('password')?.hasError('required')"><small class="small-help-text">Password is required</small></div>
+                    <div class="text text-danger" *ngIf="userCreationForm.get('password')?.dirty && userCreationForm.get('password')?.hasError('minlength')"><small class="small-help-text">Password length should be minimum 8 characters</small></div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="confirmPassword">Confirm Password</label>
+                    <input type="password" (input)="onConfirmPassword($event)" #password class="form-control input-field" id="confirmPassword" placeholder="Enter Password Again">
+                    <div class="text text-danger" *ngIf="passwordNotSame"><small class="small-help-text">Passwords do not match</small></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group mb-3">
+                <label class="small-text bold">Choose an avatar</label>
+                <div class="small-help-text">(Note: If not selected a default avatar will be set)</div>
+                <div class="row">
+                    <div class="col-3">
+                        <div [className]="userCreationForm.get('avatarId')?.value == 'one' ? 'card card-avatar-selected':'card card-avatar'" (click)="onAvatarChange('one')">
+                            <img src="../../assets/avatars/one.png">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div [className]="userCreationForm.get('avatarId')?.value == 'two' ? 'card card-avatar-selected':'card card-avatar'" (click)="onAvatarChange('two')">
+                            <img src="../../assets/avatars/two.png">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div [className]="userCreationForm.get('avatarId')?.value == 'three' ? 'card card-avatar-selected':'card card-avatar'" (click)="onAvatarChange('three')">
+                            <img src="../../assets/avatars/three.png">
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div [className]="userCreationForm.get('avatarId')?.value == 'four' ? 'card card-avatar-selected':'card card-avatar'" (click)="onAvatarChange('four')">
+                            <img src="../../assets/avatars/four.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="login-signup-div">
+            <small>Already have an account? <a [routerLink]="['/login']">Log In</a></small>
+            <button [disabled]="(!userCreationForm.valid) || passwordNotSame || isEmailExist || isLoginIdExist" type="submit" [className]="(!userCreationForm.valid) || passwordNotSame || isEmailExist || isLoginIdExist ? 'btn btn-register-disabled' : 'btn btn-register'">Register <span class="material-icons">chevron_right</span></button>
+        </div>
+    </form>
+</div>

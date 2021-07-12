@@ -1,0 +1,48 @@
+.reply-area {
+    margin: 15px;
+    background-color: black;
+    font-size: small;
+    display: flex;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(29, 29, 29);
+}
+
+.user-avatar {
+    height: 30px;
+    width: 30px;
+}
+
+.reply {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.reply-user {
+    font-size: 16px;
+}
+
+.reply-user .user-name {
+    color: white;
+    max-width: 150px;
+}
+
+.reply-user .user-handle {
+    color: gray;
+    margin: 0px 5px 0px 5px;
+}
+
+.reply-user .reply-time-seperator {
+    font-size: 12px;
+    margin-right: 5px;
+    color: gray;
+}
+
+.reply-user .reply-time {
+    font-size: 14px;
+    color: gray;
+}
+
+.reply-text {
+    margin: 10px 0px 10px 0px;
+}

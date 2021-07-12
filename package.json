@@ -22,6 +22,7 @@
     "@fortawesome/angular-fontawesome": "^0.9.0",
     "bootstrap": "^5.0.1",
     "dom-to-image": "^2.6.0",
+    "hashtag-mention-colorizer": "^1.1.2",
     "jquery": "^3.6.0",
     "material-icons": "^0.7.0",
     "popper.js": "^1.16.1",

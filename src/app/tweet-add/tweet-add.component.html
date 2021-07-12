@@ -1,8 +1,10 @@
 <div class="tweet-add-area">
-    <form class="tweet-form">
+    <form [formGroup]="tweetForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
-            <textarea rows="5" type="text" class="form-control text-area" formControlName="branch" id="userBranch" placeholder="Enter Area"></textarea>
+            <textarea rows="5" type="text" (input)="onTweetType()" class="form-control text-area" formControlName="tweet" id="tweet" placeholder="What's Happening?"></textarea>
+            <div class="text text-danger" *ngIf="tweetForm.get('tweet')?.dirty && tweetForm.get('tweet')?.hasError('maxlength')"><small class="small-help-text">Tweet cannot exceed 144 characters</small></div>
         </div>
+        <small *ngIf="!tweetForm.get('tweet')?.hasError('maxlength') && errorMessage" class="small-help-text text text-danger">{{errorMessage}}</small>
         <div class="form-group">
             <button type="submit" class="btn btn-post"><span class="material-icons post-icon">send</span></button>
         </div>

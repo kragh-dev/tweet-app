@@ -1,1 +1,20 @@
-<p>profile works!</p>
+<div class="profile-area">
+    <div class="profile-cover">
+        <span class="firstName">{{profile.user.firstName}}</span>
+        <span class="lastName">{{profile.user.lastName}}</span>
+    </div>
+    <div class="profile-details">
+        <img class="avatar" src="../../../assets/avatars/{{profile.user.avatarId}}.png">
+        <b class="user-name">{{profile.user.firstName}} {{profile.user.lastName}}</b>
+        <span class="user-id">@{{profile.user.loginId}}</span>
+        <span class="user-tweets">{{profile.tweets.length}} {{profile.tweets.length == 1 ? 'tweet' : 'tweets'}}</span>
+    </div>
+    <hr>
+    <div class="profile-tweets" *ngIf="profile.tweets.length != 0">
+        <b class="title">Tweets</b>
+        <app-tweet *ngFor="let tweet of profile.tweets" [tweet]="tweet" (tweetLiked)="refreshAfterAction($event)" (replyPosted)="refreshAfterAction($event)"></app-tweet>
+    </div>
+    <div class="profile-tweets" *ngIf="profile.tweets.length == 0">
+        <span class="noTweets">There are no tweets to display</span>
+    </div>
+</div>

@@ -1,6 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
 
+@font-face {
+    font-family: "Blackout Sunrise";
+    src: local("Blackout Sunrise"), url("./assets/fonts/blackout/Blackout Sunrise.ttf") format("truetype");
+ }
+
 * {
     box-sizing: border-box;
 }
@@ -9,7 +14,8 @@ body {
     font-family: 'Lexend Deca', sans-serif;
     margin: 0;
     color: white;
-	background-color: black;
+    background-color: black;
+    height: 100%;
 }
 
 .body-area {
@@ -36,4 +42,36 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(53, 53, 54);
+}
+
+.small-text {
+	font-size: small;
+}
+
+.large-text {
+	font-size: large;
+}
+
+.xlarge-text {
+	font-size: x-large;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.small-help-text {
+    font-size: x-small;
+}
+
+.break-newline {
+    white-space: pre-wrap
+}
+
+.hashtag {
+    color: #3989e4;
+}
+
+.hashtag-button {
+    font-size: 20px;
 }

@@ -1,0 +1,8 @@
+<div class="user-area" #theUser (click)="onUserClick()">
+    <img src="../../assets/avatars/{{user.avatarId}}.png" class="user-avatar">
+    <div class="user-details">
+        <b class="user-name">{{user.firstName}} {{user.lastName}}{{(getUser().loginId == user.loginId) ? ' (you)' : ''}}</b>
+        <span class="user-handle">@{{user.loginId}}</span>
+        <span class="user-tweets">{{user.tweetCount}} {{user.tweetCount == 1 ? 'tweet' : 'tweets'}}</span>
+    </div>
+</div>

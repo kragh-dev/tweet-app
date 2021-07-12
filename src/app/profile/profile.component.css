@@ -1,0 +1,74 @@
+.profile-area {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    min-height: 100vh;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    padding-bottom: 45px;
+}
+
+.profile-cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(17, 17, 17);
+    padding: 15px;
+    height: 150px;
+}
+
+.profile-cover .firstName {
+    font-family: 'Blackout Sunrise', sans-serif;
+    margin-left: auto;
+    font-size: 30px;
+    color: rgb(85, 85, 85);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0;
+}
+.profile-cover .lastName {
+    font-family: 'Blackout Sunrise', sans-serif;
+    margin-left: auto;
+    font-size: 30px;
+    color: rgb(85, 85, 85);
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0;
+}
+
+.profile-details {
+    padding: 0px 15px 0px 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-details .avatar {
+    margin-top: -50px;
+    height: 100px;
+    width: 100px;
+}
+
+.profile-details .user-name {
+    margin-top: 10px;
+    font-size: large;
+}
+
+.profile-details .user-id {
+    color: gray;
+    font-size: small;
+}
+
+.profile-details .user-tweets {
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.profile-tweets .title {
+    margin-left: 15px;
+    font-size: 15px;
+}
+.profile-tweets .noTweets {
+    margin: 0px 15px 0px 15px;
+    font-size: 15px;
+    text-align: center;
+}

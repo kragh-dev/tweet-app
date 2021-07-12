@@ -1,0 +1,12 @@
+<div class="reply-area" #theTweet>
+    <img src="../../assets/avatars/{{reply.author.avatarId}}.png" class="user-avatar">
+    <div class="reply">
+        <div class="reply-user">
+            <b class="user-name">{{reply.author.firstName}} {{reply.author.lastName}}</b>
+            <span class="user-handle">@{{reply.author.loginId}}</span>
+            <span class="reply-time-seperator">&#8226;</span>
+            <span class="reply-time">{{getTime(reply.createdAt)}}</span>
+        </div>
+        <div class="reply-text break-newline" [innerHTML]="genTags(reply.text)"></div>
+    </div>
+</div>

@@ -17,6 +17,7 @@ footer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 45px;
 }
 
 .nav-icon {

@@ -1,0 +1,178 @@
+.tweet-view-area {
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    min-height: 100vh;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+    padding-bottom: 45px;
+}
+
+.tweet-area {
+    padding: 15px;
+    background-color: rgb(17, 17, 17);
+    font-size: small;
+    display: flex;
+}
+
+.user-avatar {
+    height: 50px;
+    width: 50px;
+}
+
+.tweet {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.tweet-user {
+    font-size: 16px;
+}
+
+.tweet-user .user-name {
+    color: white;
+    max-width: 150px;
+}
+
+.tweet-user .user-handle {
+    color: gray;
+    margin: 0px 5px 0px 5px;
+}
+
+.tweet-user .tweet-time-seperator {
+    font-size: 12px;
+    margin-right: 5px;
+    color: gray;
+}
+
+.tweet-user .tweet-time {
+    font-size: 14px;
+    color: gray;
+}
+
+.tweet-text {
+    margin-top: 10px;
+}
+
+.time-of-tweet {
+    margin-top: 10px;
+    font-size: 14px;
+    color: gray;
+}
+
+.tweet-actions {
+    margin-top: 15px;
+    display: flex;
+}
+
+.tweet-actions .tweet-action {
+    width: 100px;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+}
+
+.tweet-actions .tweet-action .tweet-action-icon {
+    font-size: 20px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.liked {
+    color: red;
+}
+
+.tweet-reply-area {
+    margin: 0px;
+    padding: 0px 15px 15px 80px;
+    background-color: rgb(17, 17, 17);
+    font-size: small;
+}
+
+.tweet-reply {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.tweet-reply .reply-user-avatar {
+    height: 30px;
+    width: 30px;
+    margin-right: 15px;
+}
+
+.w30 {
+    margin-left: 45px;
+}
+
+.tweet-reply-text-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-area {
+    border-radius: 0;
+	border-bottom: 1;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-color: white;
+	background-color: rgb(8, 8, 8);
+	margin: 0;
+    padding: 15px;
+    color: white;
+	resize: none;
+    font-size: small;
+    flex: 1;
+}
+
+.text-area:focus {
+    border-radius: 0;
+	border-bottom: 1;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	border-color: #0077ff;
+	background-color: rgb(8, 8, 8);
+	margin: 0;
+    padding: 15px;
+    color: white;
+	resize: none;
+	font-size: small;
+    outline: none;
+    flex: 1;
+}
+
+.text-area::placeholder {
+	font-size: small;
+}
+
+.btn-post {
+	background-color: #0077ff;
+	color: white;
+	height: 28px;
+	width: 28px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+	margin-left: auto;
+}
+
+.post-icon {
+	font-size: 15px;
+}
+
+.title {
+    margin: 15px 15px 0px 15px;
+    font-size: 15px;
+}
+
+.no-replies {
+    margin: 15px 15px 15px 15px;
+    font-size: 15px;
+    text-align: center;
+}

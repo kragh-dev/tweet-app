@@ -1,0 +1,24 @@
+<div class="login-area">
+    <div class="title"><b>Login</b></div>
+    <small class="text text-danger small-help-text">{{errorMessage}}</small>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="user-login-form" novalidate>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="loginId">Login Id</label>
+                    <input type="text" class="form-control input-field" formControlName="loginId" id="loginId" placeholder="Enter Login Id">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="form-group mb-3">
+                    <label class="small-text bold" for="password">Password</label>
+                    <input type="password" class="form-control input-field" formControlName="password" id="userPass" placeholder="Enter Password">
+                </div>
+            </div>
+        </div>
+        <div class="login-signup-div">
+            <small>Don't have an account? <a [routerLink]="['/signup']">Sign Up</a></small>
+            <button type="submit" class="btn btn-login">Login <span class="material-icons">chevron_right</span></button>
+        </div>
+    </form>
+</div>
